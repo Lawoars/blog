@@ -6,4 +6,8 @@ class User < ActiveRecord::Base
     self.role == 'editor'
   end
 
+  def admin?
+    self.role == 'admin'
+  end
+
 end

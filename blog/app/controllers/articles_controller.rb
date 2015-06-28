@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
   before_action :require_editor, only: [:show, :edit]
 
+  before_action :require_admin, only: [:destroy]
   def index
     @articles = Article.all
   end

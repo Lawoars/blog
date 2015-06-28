@@ -18,7 +18,13 @@
 <%= link_to 'Back to Articles', articles_path %>
 
 <% if current_user && current_user.editor? %>
-<p class="recipe-edit">
-  <%= link_to "Edit Recipe", edit_recipe_path(@recipe.id) %>
+<p class="article-edit">
+  <%= link_to "Edit Article", edit_article_path(@article.id) %>
+</p>
+<% end %>
+
+<% if current_user && current_user.admin? %>
+<p class="article-delete">
+  <%= link_to "Delete", article_path(@article), method: "delete" %>
 </p>
 <% end %>
